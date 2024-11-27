@@ -36,7 +36,7 @@ def replace_as_int(raw_line):
                 multi_indices = reduce(lambda x, y: x + [y.start()], occurrences, [])
                 for i in range(len(multi_indices)):
                     index = multi_indices[i]
-                    raw_line = raw_line[: index + 1] + str(numbersDict[number]) + raw_line[index + 2:]
+                    raw_line = raw_line[: index + 1] + str(numbersDict[number]) + raw_line[index+1:]
             else:
                 index = raw_line.find(number)
                 raw_line = raw_line[: index + 1] + str(numbersDict[number]) + raw_line[index:]
